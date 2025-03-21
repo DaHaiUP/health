@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "健康小助手",
+  "version": "1.0",
+  "description": "定时提醒您起立走动，避免久坐带来的健康问题",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "persistent": false
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+} 
